@@ -3,12 +3,11 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>閏年チェッカー</title>
+<title>閏年年別リスト</title>
 </head>
 <body>
 	<a href="/check">チェックへ</a>
-	<p>年数別閏年リスト
-	<p>
+	<h1>年数別閏年リスト</h1>
 	<table>
 		<tr th:each="l:${list}">
 			<td th:text="${l}"></td>

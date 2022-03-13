@@ -6,16 +6,6 @@ public class checkInputYearUruudoshi {
 
 		String s = "";
 
-		try {
-			if (checkInput(year) == false) {
-				System.out.println("4桁の数値を入力してください。");
-				s = "4桁の数値を入力してください。";
-			}
-		} catch (Exception e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
-
 		if (year % 400 == 0) {
 			System.out.println(year + "年は閏年です。");
 			s = year + "年は閏年です。";
@@ -32,14 +22,4 @@ public class checkInputYearUruudoshi {
 
 		return s;
 	}
-
-	private static boolean checkInput(int input) {
-
-		if (input > 9999) {
-			return false;
-		} else {
-			return true;
-		}
-	}
-
 }
