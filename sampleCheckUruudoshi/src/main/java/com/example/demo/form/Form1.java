@@ -8,13 +8,13 @@ public class Form1 {
 
 	@Pattern(regexp = "^[0-9]+$", message = "数値を入力してください")
 	@Length(max = 5, min = 1)
-	private String id;
+	private String year;
 
-	public String getId() {
-		return id;
+	public String getYear() {
+		return year;
 	}
 
-	public void setId(String id2) {
-		this.id = id2;
+	public void setYear(String id2) {
+		this.year = id2;
 	}
 }

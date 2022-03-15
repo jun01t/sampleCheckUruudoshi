@@ -16,7 +16,7 @@ import com.example.demo.service.checkInputYearUruudoshi;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = "/list")
+	@RequestMapping(value = "/")
 	private String list(Model model) {
 		UruudoshiService target = new UruudoshiService();
 		model.addAttribute("list", target.getUruudhosiList());
@@ -42,7 +42,7 @@ public class MainController {
 			return "redirect:check";
 		}
 		checkInputYearUruudoshi target = new checkInputYearUruudoshi();
-		String s = target.checkInputYear(Integer.parseInt(test1Form.getId()));
+		String s = target.checkInputYear(Integer.parseInt(test1Form.getYear()));
 		model.addAttribute("list", s);
 
 		return "result";

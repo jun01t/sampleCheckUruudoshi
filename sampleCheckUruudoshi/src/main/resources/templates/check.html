@@ -9,13 +9,13 @@
 	<form th:action="@{/result}" method="post" th:object="${test1Form}">
 		<h1>閏年かどうか判別します</h1>
 		<p>調べたい年数を入力してください。</p>
-		<div th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+		<div th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
 			style="color: red"></div>
 		<p>
-			<input type="text" th:field="*{id}" />
+			<input type="text" th:field="*{year}" />
 		</p>
 		<button type="submit">送信</button>
 	</form>
-	<a href="/list">リストへ</a>
+	<a href="/">リストへ</a>
 </body>
 </html>
