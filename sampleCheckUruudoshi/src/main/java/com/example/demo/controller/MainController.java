@@ -12,11 +12,19 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.demo.form.Form1;
 import com.example.demo.service.UruudoshiService;
 import com.example.demo.service.checkInputYearUruudoshi;
+import com.example.demo.service.checkNowYearUruudoshi;
 
 @Controller
 public class MainController {
 
 	@RequestMapping(value = "/")
+	private String now(Model model) {
+		checkNowYearUruudoshi target = new checkNowYearUruudoshi();
+		model.addAttribute("list", target.getNowYearUruudoshi());
+		return "now";
+	}
+
+	@RequestMapping(value = "/list")
 	private String list(Model model) {
 		UruudoshiService target = new UruudoshiService();
 		model.addAttribute("list", target.getUruudhosiList());
