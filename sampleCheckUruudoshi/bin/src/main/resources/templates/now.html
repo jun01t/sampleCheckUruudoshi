@@ -73,14 +73,11 @@
 						aria-current="page">Home</a></li>
 					<li class="nav-item"><a th:href="@{/list}" class="nav-link">List</a></li>
 					<li class="nav-item"><a th:href="@{/check}" class="nav-link">Check</a></li>
-					<form role="form" id="logout" th:action="@{/logout}" method="post">
-						<button type="submit" class="nav-link">ログアウト</button>
-					</form>
 				</ul>
 			</header>
 		</div>
 		<div class="container">
-			<h1>年数別閏年リスト</h1>
+			<h1>今年は閏年？</h1>
 			<table>
 				<tr th:each="l:${list}">
 					<td th:text="${l}" style="font-size: 30px"></td>

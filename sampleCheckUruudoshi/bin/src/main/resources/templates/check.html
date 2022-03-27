@@ -73,19 +73,20 @@
 						aria-current="page">Home</a></li>
 					<li class="nav-item"><a th:href="@{/list}" class="nav-link">List</a></li>
 					<li class="nav-item"><a th:href="@{/check}" class="nav-link">Check</a></li>
-					<form role="form" id="logout" th:action="@{/logout}" method="post">
-						<button type="submit" class="nav-link">ログアウト</button>
-					</form>
 				</ul>
 			</header>
 		</div>
 		<div class="container">
-			<h1>年数別閏年リスト</h1>
-			<table>
-				<tr th:each="l:${list}">
-					<td th:text="${l}" style="font-size: 30px"></td>
-				</tr>
-			</table>
+			<form th:action="@{/result}" method="post" th:object="${test1Form}">
+				<h1>閏年かどうか判別します</h1>
+				<div th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
+					style="color: red"></div>
+				<p>
+					<input type="text" th:field="*{year}" id="input-item"
+						placeholder="西暦を入力" />
+				</p>
+				<button type="submit" class="button-item">送信</button>
+			</form>
 		</div>
 	</main>
 </body>
