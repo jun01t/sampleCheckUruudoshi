@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +21,10 @@ public class MainController {
 
 	@RequestMapping(value = "/")
 	private String now(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		// Principalからログインユーザの情報を取得
+		String userName = auth.getName();
+		model.addAttribute("userName", userName);
 		checkNowYearUruudoshi target = new checkNowYearUruudoshi();
 		model.addAttribute("list", target.getNowYearUruudoshi());
 		return "now";
@@ -40,10 +46,9 @@ public class MainController {
 	}
 
 	@PostMapping("/result")
-	public String buyItem(@ModelAttribute("test1Form") @Validated Form1 test1Form,
-			BindingResult br,
+	public String buyItem(@ModelAttribute("test1Form") @Validated Form1 test1Form, BindingResult br,
 			RedirectAttributes redirectAttributes, Model model) {
-		//メソッド内で行う処理
+		// メソッド内で行う処理
 		if (br.hasErrors()) {
 			redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.test1Form", br);
 			redirectAttributes.addFlashAttribute("test1Form", test1Form);

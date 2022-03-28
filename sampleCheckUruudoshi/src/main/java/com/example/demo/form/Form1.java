@@ -14,7 +14,7 @@ public class Form1 {
 		return year;
 	}
 
-	public void setYear(String id2) {
-		this.year = id2;
+	public void setYear(String year) {
+		this.year = year;
 	}
 }
