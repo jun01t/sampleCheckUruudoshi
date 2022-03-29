@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<meta http-equiv="content-type" charset="UTF-8">
 </head>
 <body>
-	<!--/* ƒƒOƒCƒ“¸”s/ƒƒOƒAƒEƒg‚Ígetƒpƒ‰ƒ[ƒ^‚ÉƒXƒe[ƒ^ƒX‚ª“n‚³‚ê‚Ä‚¢‚é‚Ì‚ÅAThymeleaf‚Å‚Íparam‚©‚çæ“¾ */-->
-	<div th:if="${param.logout}">You have been logged out.</div>
-	<div th:if="${param.error}">Invalid username and password.</div>
+	<!--/* ãƒ­ã‚°ã‚¤ãƒ³å¤±æ•—/ãƒ­ã‚°ã‚¢ã‚¦ãƒˆã¯getãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãŒæ¸¡ã•ã‚Œã¦ã„ã‚‹ã®ã§ã€Thymeleafã§ã¯paramã‹ã‚‰å–å¾— */-->
+	<div th:if="${param.logout}" style="color: red">ãƒ­ã‚°ã‚¢ã‚¦ãƒˆã—ã¾ã—ãŸ</div>
+	<div th:if="${param.error}" style="color: red">ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‹ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒé•ã„ã¾ã™</div>
 
-	<!--/* u/sign_inv‚ªƒƒOƒCƒ“”»’èˆ—‚ğŒÄ‚Ño‚·ViewName‚Æ‚È‚Á‚Ä‚¢‚é */-->
+	<!--/* ã€Œ/sign_inã€ãŒãƒ­ã‚°ã‚¤ãƒ³åˆ¤å®šå‡¦ç†ã‚’å‘¼ã³å‡ºã™ViewNameã¨ãªã£ã¦ã„ã‚‹ */-->
 	<form th:action="@{/sign_in}" method="post">
-		<input type="text" name="username">user_name <br /> <input
-			type="password" name="password">password <br /> <input
+		<input type="text" name="username">ãƒ¦ãƒ¼ã‚¶ãƒ¼å <br /> <input
+			type="password" name="password">ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ <br /> <input
 			type="submit" value="Login">
 	</form>
 </body>
