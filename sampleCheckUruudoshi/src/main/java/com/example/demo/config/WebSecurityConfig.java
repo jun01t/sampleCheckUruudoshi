@@ -52,20 +52,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.logout().logoutUrl("/logout").logoutSuccessUrl("/login?logout").permitAll();
 	}
 
-	/**
-	 * 認証時に利用するデータソースを定義する設定メソッド
-	 * ここではDBから取得したユーザ情報をuserDetailsServiceへセットすることで認証時の比較情報としている
-	 * 
-	 * @param auth
-	 * @throws Exception
-	 */
 	@Autowired
-	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-		/*
-		 * auth .inMemoryAuthentication()
-		 * .withUser("user").password("{noop}password").roles("USER");
-		 */
 	}
 
 }
