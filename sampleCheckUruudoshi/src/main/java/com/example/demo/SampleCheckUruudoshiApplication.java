@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan("login.app")
-@EntityScan("login.app.entiry")
+@EntityScan("login.app.entity")
 @EnableJpaRepositories("login.app.repository")
 public class SampleCheckUruudoshiApplication {
 
