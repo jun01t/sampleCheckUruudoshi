@@ -19,7 +19,7 @@ import com.example.demo.service.checkNowYearUruudoshi;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/now")
 	private String now(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		// Principalからログインユーザの情報を取得

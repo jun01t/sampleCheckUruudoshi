@@ -38,9 +38,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
-				.loginProcessingUrl("/sign_in").usernameParameter("username").passwordParameter("password")
-				.successForwardUrl("/").failureUrl("/login?error").permitAll().and().logout().logoutUrl("/logout")
+		http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
+				.usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/now", true)
+				.failureUrl("/login?error").permitAll().and().logout().logoutUrl("/logout")
 				.logoutSuccessUrl("/login?logout").permitAll();
 	}
 
