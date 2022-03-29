@@ -34,6 +34,10 @@ public class MainController {
 	private String list(Model model) {
 		UruudoshiService target = new UruudoshiService();
 		model.addAttribute("list", target.getUruudhosiList());
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		// Principalからログインユーザの情報を取得
+		String userName = auth.getName();
+		model.addAttribute("userName", userName);
 		return "list";
 	}
 
@@ -42,6 +46,10 @@ public class MainController {
 		if (!model.containsAttribute("test1Form")) {
 			model.addAttribute("test1Form", new Form1());
 		}
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		// Principalからログインユーザの情報を取得
+		String userName = auth.getName();
+		model.addAttribute("userName", userName);
 		return "check";
 	}
 
@@ -57,7 +65,10 @@ public class MainController {
 		checkInputYearUruudoshi target = new checkInputYearUruudoshi();
 		String s = target.checkInputYear(Integer.parseInt(test1Form.getYear()));
 		model.addAttribute("list", s);
-
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		// Principalからログインユーザの情報を取得
+		String userName = auth.getName();
+		model.addAttribute("userName", userName);
 		return "result";
 	}
 }
