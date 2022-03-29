@@ -5,17 +5,22 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * ログインユーザのユーザ名、パスワードを格納するためのEntity
+ * @author aoi
+ *
+ */
 @Entity
 @Table(name = "user")
 public class LoginUser {
-
+	
 	@Column(name = "user_id")
 	@Id
 	private Long userId;
-
+	
 	@Column(name = "username")
 	private String userName;
-
+	
 	@Column(name = "password")
 	private String password;
 
@@ -34,5 +39,8 @@ public class LoginUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	
+	
 
 }
