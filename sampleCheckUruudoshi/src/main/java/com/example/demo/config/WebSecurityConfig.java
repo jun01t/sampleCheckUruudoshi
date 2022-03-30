@@ -49,7 +49,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/sign_in") // フォームのSubmitURL、このURLへリクエストが送られると認証処理が実行される
 				.usernameParameter("username") // リクエストパラメータのname属性を明示
 				.passwordParameter("password").successForwardUrl("/").failureUrl("/login?error").permitAll().and()
-				.logout().logoutUrl("/logout").logoutSuccessUrl("/login?logout").permitAll();
+				.logout().logoutUrl("/logout").logoutSuccessUrl("/login?logout").invalidateHttpSession(true)
+				.permitAll();
 	}
 
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

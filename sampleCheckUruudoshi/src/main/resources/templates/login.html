@@ -2,17 +2,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="content-type" charset="UTF-8">
-</head>
-<body>
-	<!--/* ログイン失敗/ログアウトはgetパラメータにステータスが渡されているので、Thymeleafではparamから取得 */-->
-	<div th:if="${param.logout}" style="color: red">ログアウトしました</div>
-	<div th:if="${param.error}" style="color: red">ユーザー名かパスワードが違います</div>
+<title>閏年チェッカー</title>
+<link rel="canonical"
+	th:href="@{https://getbootstrap.com/docs/5.0/examples/headers/}">
+<link th:href="@{/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<script type="text/javascript"
+	th:src="@{/assets/dist/js/bootstrap.bundle.min.js}"></script>
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
 
-	<!--/* 「/sign_in」がログイン判定処理を呼び出すViewNameとなっている */-->
-	<form th:action="@{/sign_in}" method="post">
-		<input type="text" name="username">ユーザー名 <br /> <input
-			type="password" name="password">パスワード <br /> <input
-			type="submit" value="Login">
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+<!-- Custom styles for this template -->
+<link th:href="@{/css/headers.css}" rel="stylesheet">
+</head>
+<body style="text-align: center">
+	<div class="container" id="header-item">
+		<h1 class="fs-4 nav-link">閏年チェッカー</h1>
+		<!--/* ログイン失敗/ログアウトはgetパラメータにステータスが渡されているので、Thymeleafではparamから取得 */-->
+		<div th:if="${param.logout}" style="color: red">ログアウトしました</div>
+		<div th:if="${param.error}" style="color: red">ユーザー名かパスワードが違います</div>
+		<!--/* 「/sign_in」がログイン判定処理を呼び出すViewNameとなっている */-->
+	</div>
+	<form name="login_form" th:action="@{/sign_in}" method="post">
+		<div class="login_form_top">
+			<h1>ログイン画面</h1>
+			<p>ユーザ名、パスワードをご入力の上、「ログイン」ボタンをクリックしてください。</p>
+		</div>
+		<div class="login_form_btm">
+			<input type="id" name="username" placeholder="ユーザーIDを入力してください"><br>
+			<input type="password" name="password" placeholder="パスワードを入力してください">
+		</div>
+		<button type="submit">ログイン</button>
 	</form>
 </body>
 </html>

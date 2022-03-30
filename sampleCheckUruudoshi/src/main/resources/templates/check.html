@@ -59,7 +59,9 @@
   </symbol>
 </svg>
 	<main>
-		<br />
+		<div id="login-user-item">
+			<p th:text="${userName} + 'さん。こんにちは。'"></p>
+		</div>
 		<div class="container" id="header-item">
 			<header
 				class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -68,7 +70,6 @@
 					<svg class="bi me-2" width="40" height="32">
 				 <span class="fs-4 nav-link">閏年チェッカー</span>
 				</a>
-				<h2>こんにちは&nbsp;</h2><h2 th:text="${userName}">&nbsp;</h2><h2>さん&nbsp;</h2>
 				<ul class="nav nav-pills">
 					<li class="nav-item"><a th:href="@{/}" class="nav-link active"
 						aria-current="page">Home</a></li>

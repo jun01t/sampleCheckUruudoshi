@@ -38,11 +38,32 @@
 }
 
 #input-item {
-	border:2px solid black;
+	border: 2px solid black;
 }
 
 .button-item {
 	background-color: rgb(13, 110, 253);
 	color: white;
 	border-radius: 8px;
+}
+
+form {
+	text-align: center;
+}
+
+.login_form_btm {
+	padding: 10px 0;
+	background-color: #F7F7F7;
+	margin: 10px 0;
+}
+
+input {
+	width: 200px;
+	padding: 3px;
+	margin: 5px 0;
+}
+
+#login-user-item{
+	padding:10px 50px 5px 50px;
+	text-align:right;
 }
