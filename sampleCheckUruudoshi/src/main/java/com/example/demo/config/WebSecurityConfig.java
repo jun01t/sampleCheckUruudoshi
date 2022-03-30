@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.demo.service.UserDetailsServiceImpl;
@@ -51,6 +52,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.passwordParameter("password").successForwardUrl("/").failureUrl("/login?error").permitAll().and()
 				.logout().logoutUrl("/logout").logoutSuccessUrl("/login?logout").invalidateHttpSession(true)
 				.permitAll();
+
+		http.sessionManagement(session -> session.invalidSessionUrl("/login"));
+
 	}
 
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
