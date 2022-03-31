@@ -81,11 +81,11 @@
 				</ul>
 			</header>
 		</div>
-		<div class="container">
+		<div class="container" id="disp-item">
 			<h1>年数別閏年リスト</h1>
 			<table>
 				<tr th:each="l:${list}">
-					<td th:text="${l}" style="font-size: 30px"></td>
+					<td th:text="${l}" style="font-size: 30px;"></td>
 				</tr>
 			</table>
 		</div>

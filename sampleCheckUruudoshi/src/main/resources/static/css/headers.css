@@ -67,3 +67,11 @@ input {
 	padding:10px 50px 5px 50px;
 	text-align:right;
 }
+
+#disp-item {
+	text-align: center;
+}
+
+table {
+	margin:auto;
+}
