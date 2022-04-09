@@ -11,7 +11,12 @@ public class MvcConfig implements WebMvcConfigurer {
 	 * 「/login」というURLからlogin.htmlを呼び出す
 	 */
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/login").setViewName("login");
+		registry.addViewController("/home").setViewName("now");
+        registry.addViewController("/").setViewName("now");
+        registry.addViewController("/list").setViewName("list");
+        registry.addViewController("/check").setViewName("check");
+        registry.addViewController("/result").setViewName("result");
+        registry.addViewController("/login").setViewName("login");
 	}
 
 }

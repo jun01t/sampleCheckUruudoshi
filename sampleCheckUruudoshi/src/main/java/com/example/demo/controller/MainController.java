@@ -19,7 +19,7 @@ import com.example.demo.service.checkNowYearUruudoshi;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/home")
 	private String now(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		// Principalからログインユーザの情報を取得
@@ -28,6 +28,12 @@ public class MainController {
 		checkNowYearUruudoshi target = new checkNowYearUruudoshi();
 		model.addAttribute("list", target.getNowYearUruudoshi());
 		return "now";
+	}
+
+	// ログイン成功時のメニュー画面への遷移
+	@PostMapping
+	String postLogin() {
+		return "redirect:/home";
 	}
 
 	@RequestMapping(value = "/list")
@@ -70,5 +76,10 @@ public class MainController {
 		String userName = auth.getName();
 		model.addAttribute("userName", userName);
 		return "result";
+	}
+
+	@RequestMapping("/afterLogout")
+	public String afterLogout() {
+		return "afterLogout";
 	}
 }
