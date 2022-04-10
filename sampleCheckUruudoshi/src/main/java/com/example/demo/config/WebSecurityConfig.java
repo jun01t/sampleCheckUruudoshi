@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				// 「login.html」はログイン不要でアクセス可能に設定
-				.antMatchers("/login", "/user/add", "/user/list", "/loginError").permitAll()
+				.antMatchers("/login", "/user/**", "/loginError").permitAll()
 				// 上記以外は直リンク禁止
 				.anyRequest().authenticated().and().formLogin()
 				// ログイン処理のパス
