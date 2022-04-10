@@ -82,4 +82,9 @@ public class MainController {
 	public String afterLogout() {
 		return "afterLogout";
 	}
+
+	@RequestMapping("/loginError")
+	public String loginError() {
+		return "loginError";
+	}
 }

@@ -34,6 +34,10 @@
 		<div th:if="${param.error}" style="color: red">ユーザー名かパスワードが違います</div>
 		<!--/* 「/sign_in」がログイン判定処理を呼び出すViewNameとなっている */-->
 	</div>
+	<ul class="nav nav-pills">
+		<li class="nav-item"><a th:href="@{/user/add}">ユーザー登録</a></li>
+		<li class="nav-item"><a th:href="@{/user/list}" class="nav-link">ユーザー一覧</a></li>
+	</ul>
 	<form name="login_form" th:action="@{/sign_in}" method="post">
 		<div class="login_form_top">
 			<h1>ログイン画面</h1>

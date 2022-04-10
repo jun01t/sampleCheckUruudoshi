@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				// 「login.html」はログイン不要でアクセス可能に設定
-				.antMatchers("/login").permitAll()
+				.antMatchers("/login", "/user/add", "/user/list", "/loginError").permitAll()
 				// 上記以外は直リンク禁止
 				.anyRequest().authenticated().and().formLogin()
 				// ログイン処理のパス
@@ -56,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				// ログインページ
 				.loginPage("/login")
 				// ログインエラー時の遷移先 ※パラメーターに「error」を付与
-				.failureUrl("/login?error")
+				.failureUrl("/loginError")
 				// ログイン成功時の遷移先
 				.defaultSuccessUrl("/home", true)
 				// ログイン時のキー：名前
