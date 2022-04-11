@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="meta_header(title,links,scripts)">
+<meta charset="UTF-8">
+<title>閏年チェッカー</title>
+<link rel="canonical"
+	th:href="@{https://getbootstrap.com/docs/5.0/examples/headers/}">
+<link th:href="@{/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<script type="text/javascript"
+	th:src="@{/assets/dist/js/bootstrap.bundle.min.js}"></script>
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+<!-- Custom styles for this template -->
+<link th:href="@{/css/headers.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="container" id="header-item">
+		<header th:fragment="header"
+			class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+			<a th:href="@{/home}"
+				class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+				<svg class="bi me-2" width="40" height="32">
+				 <span class="fs-4 nav-link">閏年チェッカー</span>	
+			</a>
+			<ul class="nav nav-pills">
+				<li class="nav-item"><a th:href="@{/home}"
+					class="nav-link active" aria-current="page">Home</a></li>
+				<li class="nav-item"><a th:href="@{/list}" class="nav-link">List</a></li>
+				<li class="nav-item"><a th:href="@{/check}" class="nav-link">Check</a></li>
+				<form role="form" id="logout" th:action="@{/afterLogout}"
+					method="post">
+					<button type="submit" class="nav-link">ログアウト</button>
+				</form>
+			</ul>
+		</header>
+		<div th:fragment="login-user" id="login-user-item">
+			<p th:text="${userName} + 'さん。こんにちは。'"></p>
+		</div>
+	</div>
+</body>
+</html>
