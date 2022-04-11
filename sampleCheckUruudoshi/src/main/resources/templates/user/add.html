@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-<head></head>
+<head>
+<link rel="canonical"
+	th:href="@{https://getbootstrap.com/docs/5.0/examples/headers/}">
+<link th:href="@{/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<script type="text/javascript"
+	th:src="@{/assets/dist/js/bootstrap.bundle.min.js}"></script>
+<!-- Custom styles for this template -->
+<link th:href="@{/css/headers.css}" rel="stylesheet">
+</head>
 <body>
 	<div class="container">
 		<div th:if="${validationError}" th:each="error : ${validationError}">
