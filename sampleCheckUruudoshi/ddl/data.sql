@@ -9,15 +9,18 @@ CREATE TABLE user(
     user_id INT AUTO_INCREMENT,
     username VARCHAR(255),
     password VARCHAR(255),
+    role VARCHAR(2),
     PRIMARY KEY(user_id)
 );
 
-INSERT INTO user (username, password) VALUES
+INSERT INTO user (username, password, role) VALUES
 (
     'user',
-    'password'
+    'password',
+    '1'
 ),
 (
     'tomida',
-    'junichi'
+    'junichi',
+    '0'
 );

@@ -31,11 +31,7 @@
 		<ul class="nav nav-pills">
 			<li class="fs-4 nav-link"><a th:href="@{/login}"
 				class="nav-link">閏年チェッカー</a></li>
-			<li class="fs-4 nav-link"><a th:href="@{/user/add}"
-				class="nav-link" style="background-color: gray; color: white;">ユーザー登録</a></li>
-			<li class="fs-4 nav-link"><a th:href="@{/user/list}"
-				class="nav-link" style="background-color: gray; color: white;">ユーザー一覧</a></li>
-		</ul>
+			
 		<!--/* ログイン失敗/ログアウトはgetパラメータにステータスが渡されているので、Thymeleafではparamから取得 */-->
 		<div th:if="${param.logout}" style="color: red">ログアウトしました</div>
 		<div th:if="${param.error}" style="color: red">ユーザー名かパスワードが違います</div>

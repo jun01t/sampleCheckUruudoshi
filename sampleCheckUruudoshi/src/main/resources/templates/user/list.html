@@ -22,6 +22,7 @@
 				<tr>
 					<th>ID</th>
 					<th>名前</th>
+					<th>ロール</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -30,6 +31,8 @@
 					class="align-middle">
 					<td th:text="*{userId}"></td>
 					<td th:text="*{userName}"></td>
+					<td th:if="*{role} == '1'" th:text="管理者"></td>
+					<td th:if="*{role} == '0'" th:text="ユーザー"></td>
 					<td><a th:href="@{/user/{id}(id=*{userId})}"
 						class="btn btn-secondary">詳細</a></td>
 				</tr>

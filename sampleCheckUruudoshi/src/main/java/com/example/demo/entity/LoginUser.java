@@ -31,6 +31,17 @@ public class LoginUser {
 	@Column(name = "password")
 	private String password;
 
+	@Column(name = "role")
+	private String role;
+
+	public void setUserId(Long id) {
+		this.userId = id;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
@@ -47,4 +58,11 @@ public class LoginUser {
 		this.password = password;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 }

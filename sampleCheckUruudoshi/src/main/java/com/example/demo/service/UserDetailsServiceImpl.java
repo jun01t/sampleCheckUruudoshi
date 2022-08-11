@@ -24,15 +24,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		// TODO 自動生成されたメソッド・スタブ
 		LoginUser user = userDao.findUser(userName);
 
 		if (user == null) {
 			throw new UsernameNotFoundException("User" + userName + "was not found in the database");
 		}
 
+		String role = user.getRole();
 		List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
-		GrantedAuthority authority = new SimpleGrantedAuthority("USER");
+		GrantedAuthority authority = new SimpleGrantedAuthority(role);
 		grantList.add(authority);
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

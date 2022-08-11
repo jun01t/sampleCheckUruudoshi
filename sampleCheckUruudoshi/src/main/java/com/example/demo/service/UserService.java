@@ -41,6 +41,7 @@ public class UserService {
 		LoginUser user = new LoginUser();
 		user.setUserName(userRequest.getName());
 		user.setPassword(userRequest.getPassword());
+		user.setRole(userRequest.getRole());
 		userRepository.save(user);
 	}
 
@@ -62,6 +63,7 @@ public class UserService {
 		LoginUser user = findById(userUpdateRequest.getId());
 		user.setUserName(userUpdateRequest.getName());
 		user.setPassword(userUpdateRequest.getPassword());
+		user.setRole(userUpdateRequest.getRole());
 		userRepository.save(user);
 	}
 

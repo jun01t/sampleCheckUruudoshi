@@ -105,6 +105,7 @@ public class UserController {
 		userUpdateRequest.setId(user.getUserId());
 		userUpdateRequest.setName(user.getUserName());
 		userUpdateRequest.setPassword(user.getPassword());
+		userUpdateRequest.setRole(user.getRole());
 		model.addAttribute("userUpdateRequest", userUpdateRequest);
 		return "user/edit";
 	}

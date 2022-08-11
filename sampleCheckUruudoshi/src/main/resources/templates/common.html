@@ -33,7 +33,7 @@
 			<a th:href="@{/home}"
 				class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
 				<svg class="bi me-2" width="40" height="32">
-				 <span class="fs-4 nav-link">閏年チェッカー</span>	
+				 <span class="fs-4 nav-link">閏年チェッカー</span>
 			</a>
 			<ul class="nav nav-pills">
 				<li class="nav-item"><a th:href="@{/home}"
@@ -45,6 +45,14 @@
 					<button type="submit" class="nav-link">ログアウト</button>
 				</form>
 			</ul>
+			<div th:if="${role} == '1'">
+				<ul class="nav nav-pills">
+					<li class="fs-4 nav-link"><a th:href="@{/user/add}"
+						class="nav-link" style="background-color: gray; color: white;">ユーザー登録</a></li>
+					<li class="fs-4 nav-link"><a th:href="@{/user/list}"
+						class="nav-link" style="background-color: gray; color: white;">ユーザー一覧</a></li>
+				</ul>
+			</div>
 		</header>
 		<div th:fragment="login-user" id="login-user-item">
 			<p th:text="${userName} + 'さん。こんにちは。'"></p>
