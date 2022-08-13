@@ -32,9 +32,8 @@ public class MainController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		// Principalからログインユーザの情報を取得
 		String userName = auth.getName();
-		String role = auth.getAuthorities().toString();
+		String role = auth.getAuthorities().toArray()[0].toString();
 		model.addAttribute("userName", userName);
-		role = role.substring(1, 2);
 		model.addAttribute("role", role);
 		checkNowYearUruudoshi target = new checkNowYearUruudoshi();
 		model.addAttribute("list", target.getNowYearUruudoshi());
