@@ -52,17 +52,6 @@ public class UserRequest implements Serializable {
 		return role;
 	}
 
-	/**
-	 * ユーザーID
-	 */
-	@NotNull
-	private Long id;
-
-	public void setId(Long userId) {
-		this.id = userId;
-
-	}
-
 	public void setName(String userName) {
 		this.name = userName;
 

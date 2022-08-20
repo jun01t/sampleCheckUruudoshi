@@ -22,7 +22,6 @@ public class UserUpdateRequest extends UserRequest implements Serializable {
 	/**
 	 * ユーザーID
 	 */
-	@NotNull
 	private Long id;
 
 	public Long getId() {
